@@ -1,0 +1,23 @@
+{
+  "name": "carbon19",
+  "version": "1.0.0",
+  "description": "Carbon hackathon 2019",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tlnguyen4/carbon19.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tlnguyen4/carbon19/issues"
+  },
+  "homepage": "https://github.com/tlnguyen4/carbon19#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "twilio": "^3.31.1"
+  }
+}
