@@ -3,8 +3,44 @@
     <title>Data Visualization</title>
   </head>
   <body>
-    		<h1>Pie chart</h1>
-    <img src="/pie_chart/" alt="Simple pie chart">
+    		<h1>Input Goals</h1>
+    <!--img src="/pie_chart/" alt="Simple pie chart"-->
+    <form action="/redirect" method="POST">
+    	<fieldset>
+    		<legend>Input Target Values</legend>
+        <p>
+          <label>Target for Food</label>
+          <input type = "number"
+                 name = "food"
+                 value = "0" />
+        </p>
+        <p>
+          <label>Target for Entertainment</label>
+          <input type = "number"
+                 name = "ent"
+                 value = "0" />
+        </p>
+        <p>
+          <label>Target for Bills</label>
+          <input type = "number"
+                 name = "bills"
+                 value = "0" />
+        </p>
+        <p>
+          <label>Target for Transportation</label>
+          <input type = "number"
+                 name = "trans"
+                 value = "0" />
+        </p>
+        <p>
+          <label>Target for Others</label>
+          <input type = "number"
+                 name = "other"
+                 value = "0" />
+        </p>
+
+        <input type="submit" value="Create plot">
+    </form>
     
   </body>
 </html>

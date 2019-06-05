@@ -1,20 +1,46 @@
 # Libraries
 from io import BytesIO
-from flask import Flask, render_template, send_file, make_response
+from flask import Flask, render_template, send_file, make_response, request, redirect
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 from mpl_toolkits.mplot3d import Axes3D
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
+import json
 plt.style.use('ggplot')
 
 app = Flask(__name__) 
 # Make data: I have 3 groups and 7 subgroups
 
-@app.route('/pie_chart/')
+food = 0
+trans = 0
+ent = 0
+bills = 0
+other = 0
+
+fsum = 0
+tsum = 0
+esum = 0
+bsum = 0
+osum = 0
+
+with open("data.json") as json_file:
+	global fsum
+	global tsum
+	global esum
+	global bsum
+	global osum
+    json_data = json.load(json_file)
+    for row in data:
+    	type = row['type']
+    	if type
+    	i
+
+@app.route('/pie_chart')
 def plot():
+
 	group_names=['Food', 'Transportation', 'Entertainment', 'Bills', 'Others']
-	group_size=[10, 10, 15, 20, 10]
+	group_size=[food, trans, ent, bills, other]
 	subgroup_names=['Spent', 'Remaining', 'Spent', 'Remaining', 'Spent', 'Remaining', 'Spent', 'Remaining', 'Spent', 'Remaining']
 	subgroup_size=[5, 5, 3, 7, 10, 5, 8, 12, 3, 7 ]
 	# Create colors
@@ -45,6 +71,22 @@ def plot():
 @app.route('/')
 def index():
 	return render_template("index.html")
+
+@app.route('/redirect', methods=["POST"])
+def index2():
+	#print "hi"
+	global food
+	#print request.form
+	food = request.form['food']
+	global ent
+	ent = request.form['ent']
+	global bills
+	bills = request.form['bills']
+	global trans
+	trans = request.form['trans']
+	global other
+	other = request.form['other']
+	return render_template("plot.html")
 
 if __name__ == '__main__':
     app.run(debug=True)
