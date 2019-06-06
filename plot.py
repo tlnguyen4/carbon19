@@ -45,7 +45,7 @@ def plot():
 	group_names=['Food- $' + str(food) + '\nRem - $' + str(food-fsum), 'Transportation- $' + str(trans)+ '\nRem - $' + str(trans-tsum), 'Entertainment- $' + str(ent)+ '\nRem - $' + str(ent-esum), 'Bills- $' + str(bills)+ '\nRem - $' + str(bills-bsum), 'Others- $' + str(other) + '\nRem - $' + str(other-osum)]
 	group_size=[food, trans, ent, bills, other]
 	#subgroup_names=[' ', ' ', ' ', ' ', ' ', 'Rem- $' + str(ent-esum), ' ', 'Rem- $' + str(bills-bsum), ' ', 'Rem- $' + str(other-osum)]
-	subgroup_size=[fsum, food-fsum, tsum, trans-tsum, esum, ent-esum, bsum, bills-bsum, osum, other-osum]
+	subgroup_size=[min(food, fsum), max(0, food-fsum), min(trans, tsum), max(0, trans-tsum), min(ent, esum), max(0, ent-esum), min(bills, bsum), max(0, bills-bsum), min(other, osum), max(0, other-osum)]
 	# Create colors
 	a, b, c, d, e, f=[plt.cm.Blues, plt.cm.Reds, plt.cm.Greens, plt.cm.Oranges, plt.cm.Purples, plt.cm.Greys]
 
