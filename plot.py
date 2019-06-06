@@ -40,12 +40,12 @@ def plot():
 	    	elif type == "ent":
 	    		esum += int(row['amount'])
 
-	group_names=['Food- $' + str(food) + '\n Rem - $' + str(food-fsum), 'Transportation- $' + str(trans), 'Entertainment- $' + str(ent), 'Bills- $' + str(bills), 'Others- $' + str(other)]
+	group_names=['Food- $' + str(food) + '\nRem - $' + str(food-fsum), 'Transportation- $' + str(trans)+ '\nRem - $' + str(trans-tsum), 'Entertainment- $' + str(ent)+ '\nRem - $' + str(ent-esum), 'Bills- $' + str(bills)+ '\nRem - $' + str(bills-bsum), 'Others- $' + str(other) + '\nRem - $' + str(other-osum)]
 	group_size=[food, trans, ent, bills, other]
-	subgroup_names=[' ', 'Rem- $' + str(food-fsum), ' ', 'Rem- $' + str(trans-tsum), ' ', 'Rem- $' + str(ent-esum), ' ', 'Rem- $' + str(bills-bsum), ' ', 'Rem- $' + str(other-osum)]
+	#subgroup_names=[' ', ' ', ' ', ' ', ' ', 'Rem- $' + str(ent-esum), ' ', 'Rem- $' + str(bills-bsum), ' ', 'Rem- $' + str(other-osum)]
 	subgroup_size=[fsum, food-fsum, tsum, trans-tsum, esum, ent-esum, bsum, bills-bsum, osum, other-osum]
 	# Create colors
-	a, b, c, d, e=[plt.cm.Blues, plt.cm.Reds, plt.cm.Greens, plt.cm.Oranges, plt.cm.Purples]
+	a, b, c, d, e, f=[plt.cm.Blues, plt.cm.Reds, plt.cm.Greens, plt.cm.Oranges, plt.cm.Purples, plt.cm.Greys]
  
 	# First Ring (outside)
 	fig, ax = plt.subplots()
@@ -54,7 +54,7 @@ def plot():
 	plt.setp( mypie, width=0.3, edgecolor='white')
  
 	# Second Ring (Inside)
-	mypie2, _ = ax.pie(subgroup_size, radius=1.3-0.3, labels=subgroup_names, labeldistance=0.7, colors=[a(0.6), a(0.4), b(0.6), b(0.4), c(0.6), c(0.4), d(0.6), d(0.4), e(0.6), e(0.4)])
+	mypie2, _ = ax.pie(subgroup_size, radius=1.3-0.3, colors=[f(0.4), a(0.45), f(0.4), b(0.45), f(0.4), c(0.45), f(0.4), d(0.45), f(0.4), e(0.45)])
 	plt.setp( mypie2, width=0.4, edgecolor='white')
 	inner_circle = plt.Circle((0,0),0.70,fc='white')
 	plt.margins(0,0)
