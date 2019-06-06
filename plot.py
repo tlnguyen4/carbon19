@@ -18,31 +18,32 @@ ent = 0
 bills = 0
 other = 0
 
-fsum = 0
-tsum = 0
-esum = 0
-bsum = 0
-osum = 0
-
-with open("data.json") as json_file:
-	global fsum
-	global tsum
-	global esum
-	global bsum
-	global osum
-    json_data = json.load(json_file)
-    for row in data:
-    	type = row['type']
-    	if type
-    	i
-
 @app.route('/pie_chart')
 def plot():
+	fsum = 0
+	tsum = 0
+	esum = 0
+	bsum = 0
+	osum = 0
+	with open("data.json") as json_file:
+	    json_data = json.load(json_file)
+	    for row in json_data:
+	    	type = row['title']
+	    	if type == "food":
+	    		fsum += int(row['amount'])
+	    	elif type == "bills":
+	    		bsum += int(row['amount'])
+	    	elif type == "other":
+	    		osum += int(row['amount'])
+	    	elif type == "trans":
+	    		tsum += int(row['amount'])
+	    	elif type == "ent":
+	    		esum += int(row['amount'])
 
 	group_names=['Food', 'Transportation', 'Entertainment', 'Bills', 'Others']
 	group_size=[food, trans, ent, bills, other]
 	subgroup_names=['Spent', 'Remaining', 'Spent', 'Remaining', 'Spent', 'Remaining', 'Spent', 'Remaining', 'Spent', 'Remaining']
-	subgroup_size=[5, 5, 3, 7, 10, 5, 8, 12, 3, 7 ]
+	subgroup_size=[fsum, food-fsum, tsum, trans-tsum, esum, ent-esum, bsum, bills-bsum, osum, other-osum]
 	# Create colors
 	a, b, c, d, e=[plt.cm.Blues, plt.cm.Reds, plt.cm.Greens, plt.cm.Oranges, plt.cm.Purples]
  
@@ -77,15 +78,15 @@ def index2():
 	#print "hi"
 	global food
 	#print request.form
-	food = request.form['food']
+	food = int(request.form['food'])
 	global ent
-	ent = request.form['ent']
+	ent = int(request.form['ent'])
 	global bills
-	bills = request.form['bills']
+	bills = int(request.form['bills'])
 	global trans
-	trans = request.form['trans']
+	trans = int(request.form['trans'])
 	global other
-	other = request.form['other']
+	other = int(request.form['other'])
 	return render_template("plot.html")
 
 if __name__ == '__main__':

@@ -1,0 +1,227 @@
+[
+  {
+     "date": "5/30/2019",
+     "title": "bills",
+     "amount": 20
+  },
+  {
+     "date": "6/3/2019",
+     "title": "food",
+     "amount": 0
+  },
+  {
+     "date": "6/3/2019",
+     "title": "other",
+     "amount": 4
+  },
+  {
+     "date": "6/4/2019",
+     "title": "food",
+     "amount": 8
+  },
+  {
+     "date": "6/3/2019",
+     "title": "bills",
+     "amount": 10
+  },
+  {
+     "date": "6/5/2019",
+     "title": "food",
+     "amount": 10
+  },
+  {
+     "date": "6/4/2019",
+     "title": "bills",
+     "amount": 0
+  },
+  {
+     "date": "6/2/2019",
+     "title": "trans",
+     "amount": 5
+  },
+  {
+     "date": "6/4/2019",
+     "title": "trans",
+     "amount": 19
+  },
+  {
+     "date": "6/3/2019",
+     "title": "other",
+     "amount": 15
+  },
+  {
+     "date": "6/4/2019",
+     "title": "food",
+     "amount": 18
+  },
+  {
+     "date": "5/30/2019",
+     "title": "bills",
+     "amount": 3
+  },
+  {
+     "date": "6/3/2019",
+     "title": "other",
+     "amount": 19
+  },
+  {
+     "date": "5/30/2019",
+     "title": "other",
+     "amount": 1
+  },
+  {
+     "date": "6/5/2019",
+     "title": "other",
+     "amount": 14
+  },
+  {
+     "date": "6/2/2019",
+     "title": "ent",
+     "amount": 3
+  },
+  {
+     "date": "6/4/2019",
+     "title": "bills",
+     "amount": 6
+  },
+  {
+     "date": "6/2/2019",
+     "title": "bills",
+     "amount": 17
+  },
+  {
+     "date": "6/4/2019",
+     "title": "food",
+     "amount": 8
+  },
+  {
+     "date": "5/30/2019",
+     "title": "trans",
+     "amount": 16
+  },
+  {
+     "date": "5/29/2019",
+     "title": "trans",
+     "amount": 1
+  },
+  {
+     "date": "6/3/2019",
+     "title": "ent",
+     "amount": 9
+  },
+  {
+     "date": "6/1/2019",
+     "title": "bills",
+     "amount": 8
+  },
+  {
+     "date": "6/5/2019",
+     "title": "other",
+     "amount": 16
+  },
+  {
+     "date": "6/2/2019",
+     "title": "trans",
+     "amount": 14
+  },
+  {
+     "date": "5/20/2019",
+     "title": "other",
+     "amount": 15
+  },
+  {
+     "date": "6/5/2019",
+     "title": "other",
+     "amount": 8
+  },
+  {
+     "date": "6/1/2019",
+     "title": "trans",
+     "amount": 3
+  },
+  {
+     "date": "6/4/2019",
+     "title": "other",
+     "amount": 4
+  },
+  {
+     "date": "6/3/2019",
+     "title": "other",
+     "amount": 15
+  },
+  {
+     "date": "6/3/2019",
+     "title": "bills",
+     "amount": 8
+  },
+  {
+     "date": "5/29/2019",
+     "title": "ent",
+     "amount": 15
+  },
+  {
+     "date": "6/5/2019",
+     "title": "other",
+     "amount": 13
+  },
+  {
+     "date": "6/5/2019",
+     "title": "ent",
+     "amount": 6
+  },
+  {
+     "date": "6/5/2019",
+     "title": "other",
+     "amount": 5
+  },
+  {
+     "date": "5/30/2019",
+     "title": "food",
+     "amount": 16
+  },
+  {
+     "date": "6/5/2019",
+     "title": "other",
+     "amount": 7
+  },
+  {
+     "date": "6/5/2019",
+     "title": "other",
+     "amount": 5
+  },
+  {
+     "date": "5/30/2019",
+     "title": "trans",
+     "amount": 10
+  },
+  {
+     "date": "6/5/2019",
+     "title": "bills",
+     "amount": 18
+  },
+  {
+     "date": "6/2/2019",
+     "title": "trans",
+     "amount": 5
+  },
+  {
+     "date": "6/4/2019",
+     "title": "bills",
+     "amount": 2
+  },
+  {
+     "date": "6/3/2019",
+     "title": "trans",
+     "amount": 10
+  },
+  {
+     "date": "6/4/2019",
+     "title": "food",
+     "amount": 9
+  },
+  {
+     "date": "6/4/2019",
+     "title": "food",
+     "amount": 5
+  }
+]
