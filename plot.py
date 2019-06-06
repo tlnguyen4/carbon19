@@ -68,7 +68,49 @@ def plot():
 	fig.savefig(img)
 	img.seek(0)
 	return send_file(img, mimetype='image/png')
-	 
+
+@app.route('/bar_chart')
+def plot_bar():
+	print("hi2")
+	data = [[350,50, 275,25, 200,50, 515,85, 140,10],[380,20, 240,10, 215,35, 475,25, 75,25],[310,40, 205,45, 275,25, 475,25, 95,5],[350,0, 190,10, 295,5, 530,20, 140,10],[300,0, 85,15, 235,15, 430,20, 295,5]]
+	d1,d2,d3,d4,d5,d6,d7,d8,d9,d0 = [],[],[],[],[],[],[],[],[],[]
+	for row in data:
+		d1.append(row.pop(0))
+		d2.append(row.pop(0))
+		d3.append(row.pop(0))
+		d4.append(row.pop(0))
+		d5.append(row.pop(0))
+		d6.append(row.pop(0))
+		d7.append(row.pop(0))
+		d8.append(row.pop(0))
+		d9.append(row.pop(0))
+		d0.append(row.pop(0))
+
+	ind = np.arange(5)
+	p1 = plt.bar(ind, d1)
+	p2 = plt.bar(ind, d2, bottom=d1)
+	p3 = plt.bar(ind, d3, bottom=d2)
+	p4 = plt.bar(ind, d4, bottom=d3)
+	p5 = plt.bar(ind, d5, bottom=d4)
+	p6 = plt.bar(ind, d6, bottom=d5)
+	p7 = plt.bar(ind, d7, bottom=d6)
+	p8 = plt.bar(ind, d8, bottom=d7)
+	p9 = plt.bar(ind, d9, bottom=d8)
+	p0 = plt.bar(ind, d0, bottom=d9)
+
+	fig, ax = plt.subplots()
+	plt.yticks(ind, ('May', 'April', 'March', 'February', 'January'))
+	plt.xticks(np.arange(0, 1900, 500))
+
+	ax.set_title("Past Months\n",fontsize=24)
+	plt.tight_layout()
+	canvas = FigureCanvas(fig)
+	img = BytesIO()
+	fig.savefig(img)
+	img.seek(0)
+	return send_file(img, mimetype='image/png')
+
+
 @app.route('/')
 def index():
 	return render_template("index.html")
