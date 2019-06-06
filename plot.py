@@ -99,16 +99,16 @@ def plot_bar():
 	d0=np.array(d0)
 
 	ind = np.arange(5)
-	p1 = plt.barh(ind, d1, align = 'center', color='orange')
-	p2 = plt.barh(ind, d2, left=d1, align = 'center', color='orange')
-	p3 = plt.barh(ind, d3, left=d2+d1, align = 'center', color='green')
-	p4 = plt.barh(ind, d4, left=d3+d2+d1, align = 'center', color='green')
-	p5 = plt.barh(ind, d5, left=d4+d3+d2+d1, align = 'center', color='red')
-	p6 = plt.barh(ind, d6, left=d5+d4+d3+d2+d1, align = 'center', color='red')
-	p7 = plt.barh(ind, d7, left=d6+d5+d4+d3+d2+d1, align = 'center', color ='blue')
-	p8 = plt.barh(ind, d8, left=d7+d6+d5+d4+d3+d2+d1, align = 'center', color='blue')
-	p9 = plt.barh(ind, d9, left=d8+d7+d6+d5+d4+d3+d2+d1, align = 'center', color='purple')
-	p0 = plt.barh(ind, d0, left=d9+d8+d7+d6+d5+d4+d3+d2+d1, align = 'center', color='purple')
+	p1 = plt.barh(ind, d1, height=0.4, align = 'center', color='orange')
+	p2 = plt.barh(ind, d2, height=0.4, left=d1, align = 'center', color='orange')
+	p3 = plt.barh(ind, d3, height=0.4, left=d2+d1, align = 'center', color='green')
+	p4 = plt.barh(ind, d4, height=0.4, left=d3+d2+d1, align = 'center', color='green')
+	p5 = plt.barh(ind, d5, height=0.4, left=d4+d3+d2+d1, align = 'center', color='red')
+	p6 = plt.barh(ind, d6, height=0.4, left=d5+d4+d3+d2+d1, align = 'center', color='red')
+	p7 = plt.barh(ind, d7, height=0.4, left=d6+d5+d4+d3+d2+d1, align = 'center', color ='blue')
+	p8 = plt.barh(ind, d8, height=0.4, left=d7+d6+d5+d4+d3+d2+d1, align = 'center', color='blue')
+	p9 = plt.barh(ind, d9, height=0.4, left=d8+d7+d6+d5+d4+d3+d2+d1, align = 'center', color='purple')
+	p0 = plt.barh(ind, d0, height=0.4, left=d9+d8+d7+d6+d5+d4+d3+d2+d1, align = 'center', color='purple')
 
 
 	
