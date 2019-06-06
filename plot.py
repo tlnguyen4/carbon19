@@ -97,35 +97,46 @@ def plot_bar():
 	d8=np.array(d8)
 	d9=np.array(d9)
 	d0=np.array(d0)
-
+	months= ['May', 'April', 'March', 'February', 'January']
+	
+	fig, ax = plt.subplots()
 	ind = np.arange(5)
-	p1 = plt.barh(ind, d1, height=0.4, align = 'center', color='orange')
-	p2 = plt.barh(ind, d2, height=0.4, left=d1, align = 'center', color='orange')
-	p3 = plt.barh(ind, d3, height=0.4, left=d2+d1, align = 'center', color='green')
-	p4 = plt.barh(ind, d4, height=0.4, left=d3+d2+d1, align = 'center', color='green')
-	p5 = plt.barh(ind, d5, height=0.4, left=d4+d3+d2+d1, align = 'center', color='red')
-	p6 = plt.barh(ind, d6, height=0.4, left=d5+d4+d3+d2+d1, align = 'center', color='red')
-	p7 = plt.barh(ind, d7, height=0.4, left=d6+d5+d4+d3+d2+d1, align = 'center', color ='blue')
-	p8 = plt.barh(ind, d8, height=0.4, left=d7+d6+d5+d4+d3+d2+d1, align = 'center', color='blue')
-	p9 = plt.barh(ind, d9, height=0.4, left=d8+d7+d6+d5+d4+d3+d2+d1, align = 'center', color='purple')
-	p0 = plt.barh(ind, d0, height=0.4, left=d9+d8+d7+d6+d5+d4+d3+d2+d1, align = 'center', color='purple')
+	labels=np.array(months)
 
-
+	ax.barh(ind, d1, height=0.4, align = 'center', color='orange')
+	ax.barh(ind, d2, height=0.4, left=d1, align = 'center', color='orange')
+	ax.barh(ind, d3, height=0.4, left=d2+d1, align = 'center', color='green')
+	ax.barh(ind, d4, height=0.4, left=d3+d2+d1, align = 'center', color='green')
+	ax.barh(ind, d5, height=0.4, left=d4+d3+d2+d1, align = 'center', color='red')
+	ax.barh(ind, d6, height=0.4, left=d5+d4+d3+d2+d1, align = 'center', color='red')
+	ax.barh(ind, d7, height=0.4, left=d6+d5+d4+d3+d2+d1, align = 'center', color ='blue')
+	ax.barh(ind, d8, height=0.4, left=d7+d6+d5+d4+d3+d2+d1, align = 'center', color='blue')
+	ax.barh(ind, d9, height=0.4, left=d8+d7+d6+d5+d4+d3+d2+d1, align = 'center', color='purple')
+	ax.barh(ind, d0, height=0.4, left=d9+d8+d7+d6+d5+d4+d3+d2+d1, align = 'center', color='purple')
+	
+	
+	plt.yticks(np.arange(len(labels)), labels)
+	ax.set_title('Past Months',fontsize=24)
+	canvas = FigureCanvas(fig)
+	img = BytesIO()
+	fig.savefig(img)
+	img.seek(0)
+	return send_file(img, mimetype='image/png')
 	
 
-	plt.yticks(ind, ('May', 'April', 'March', 'February', 'January'))
-	plt.xticks(np.arange(0, 2000, 500))
+	# plt.yticks(ind, ('May', 'April', 'March', 'February', 'January'))
+	# plt.xticks(np.arange(0, 2000, 500))
 	
-	plt.title("Past Months\n",fontsize=24)
-	plt.savefig('pic.png')
+	# plt.title("Past Months\n",fontsize=24)
+	# plt.savefig('pic.png')
 
 	
-	# plt.tight_layout()
-	# canvas = FigureCanvas(fig)
-	# img = BytesIO()
-	# fig.savefig(img)
-	# img.seek(0)
-	return send_file('pic.png')
+	# # plt.tight_layout()
+	# # canvas = FigureCanvas(fig)
+	# # img = BytesIO()
+	# # fig.savefig(img)
+	# # img.seek(0)
+	# return send_file('pic.png')
 
 @app.route('/')
 def index():
