@@ -98,24 +98,31 @@ def plot_bar():
 	d9=np.array(d9)
 	d0=np.array(d0)
 	months= ['May', 'April', 'March', 'February', 'January']
-	
+	types = ['Bills', 'Entertainment', 'Transportation', 'Food', 'Others']	
 	fig, ax = plt.subplots()
 	ind = np.arange(5)
 	labels=np.array(months)
 
+	a, b, c, d, e, f=[plt.cm.Blues, plt.cm.Reds, plt.cm.Greens, plt.cm.Oranges, plt.cm.Purples, plt.cm.Greys]
 	ax.barh(ind, d1, height=0.4, align = 'center', color='orange')
-	ax.barh(ind, d2, height=0.4, left=d1, align = 'center', color='orange')
+	ax.barh(ind, d2, height=0.4, left=d1, align = 'center', color=d(0.4))
 	ax.barh(ind, d3, height=0.4, left=d2+d1, align = 'center', color='green')
-	ax.barh(ind, d4, height=0.4, left=d3+d2+d1, align = 'center', color='green')
+	ax.barh(ind, d4, height=0.4, left=d3+d2+d1, align = 'center', color=c(0.4))
 	ax.barh(ind, d5, height=0.4, left=d4+d3+d2+d1, align = 'center', color='red')
-	ax.barh(ind, d6, height=0.4, left=d5+d4+d3+d2+d1, align = 'center', color='red')
+	ax.barh(ind, d6, height=0.4, left=d5+d4+d3+d2+d1, align = 'center', color=b(0.4))
 	ax.barh(ind, d7, height=0.4, left=d6+d5+d4+d3+d2+d1, align = 'center', color ='blue')
-	ax.barh(ind, d8, height=0.4, left=d7+d6+d5+d4+d3+d2+d1, align = 'center', color='blue')
+	ax.barh(ind, d8, height=0.4, left=d7+d6+d5+d4+d3+d2+d1, align = 'center', color=a(0.4))
 	ax.barh(ind, d9, height=0.4, left=d8+d7+d6+d5+d4+d3+d2+d1, align = 'center', color='purple')
-	ax.barh(ind, d0, height=0.4, left=d9+d8+d7+d6+d5+d4+d3+d2+d1, align = 'center', color='purple')
+	ax.barh(ind, d0, height=0.4, left=d9+d8+d7+d6+d5+d4+d3+d2+d1, align = 'center', color=e(0.4))
 	
-	
+	ax.legend(types, bbox_to_anchor=(0.8,1.1))
+	leg = ax.get_legend()
+	leg.legendHandles[1].set_color('green')
+	leg.legendHandles[2].set_color('red')
+	leg.legendHandles[3].set_color('blue')
+	leg.legendHandles[4].set_color('purple')
 	plt.yticks(np.arange(len(labels)), labels)
+	plt.xticks(np.arange(0, 2000, 400))
 	ax.set_title('Past Months',fontsize=24)
 	canvas = FigureCanvas(fig)
 	img = BytesIO()
