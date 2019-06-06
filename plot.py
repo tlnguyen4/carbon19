@@ -40,9 +40,9 @@ def plot():
 	    	elif type == "ent":
 	    		esum += int(row['amount'])
 
-	group_names=['Food', 'Transportation', 'Entertainment', 'Bills', 'Others']
+	group_names=['Food- $' + str(food) + '\n Rem - $' + str(food-fsum), 'Transportation- $' + str(trans), 'Entertainment- $' + str(ent), 'Bills- $' + str(bills), 'Others- $' + str(other)]
 	group_size=[food, trans, ent, bills, other]
-	subgroup_names=['Spent', 'Remaining', 'Spent', 'Remaining', 'Spent', 'Remaining', 'Spent', 'Remaining', 'Spent', 'Remaining']
+	subgroup_names=[' ', 'Rem- $' + str(food-fsum), ' ', 'Rem- $' + str(trans-tsum), ' ', 'Rem- $' + str(ent-esum), ' ', 'Rem- $' + str(bills-bsum), ' ', 'Rem- $' + str(other-osum)]
 	subgroup_size=[fsum, food-fsum, tsum, trans-tsum, esum, ent-esum, bsum, bills-bsum, osum, other-osum]
 	# Create colors
 	a, b, c, d, e=[plt.cm.Blues, plt.cm.Reds, plt.cm.Greens, plt.cm.Oranges, plt.cm.Purples]
