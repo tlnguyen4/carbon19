@@ -115,7 +115,7 @@ def plot_bar():
 	ax.barh(ind, d9, height=0.4, left=d8+d7+d6+d5+d4+d3+d2+d1, align = 'center', color='purple')
 	ax.barh(ind, d0, height=0.4, left=d9+d8+d7+d6+d5+d4+d3+d2+d1, align = 'center', color=e(0.4))
 	
-	ax.legend(types, bbox_to_anchor=(0.8,1.1))
+	ax.legend(types, bbox_to_anchor=(0.8,0.8))
 	leg = ax.get_legend()
 	leg.legendHandles[1].set_color('green')
 	leg.legendHandles[2].set_color('red')
